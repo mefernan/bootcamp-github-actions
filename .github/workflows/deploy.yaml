@@ -1,0 +1,14 @@
+name: "Hello world"
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-hello_world-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hacemos pull del código"
+      - run: echo "Correr migraciones"
+      - run: echo "Generar binarios"
+      - run: echo "Publicar versión"
