@@ -5,10 +5,19 @@ on:
       - main
 
 jobs:
-  deploy-hello_world-github-actions:
+  first-deploy-hello_world-github-actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binarios"
       - run: echo "Publicar versión"
+
+  second-deploy-hello_world-github-actions:
+    needs: first-deploy-hello_world-github-actions
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "We pull the code"
+      - run: echo "Run migrations"
+      - run: echo "Generate binaries"
+      - run: echo "Publish version"
